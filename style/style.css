@@ -2,6 +2,10 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
+.header {
+    box-shadow: 1px 2px 8px #e0e0e0;
+}
+
 .heading {
     margin: 0;
     font-size: 24px;
@@ -30,7 +34,7 @@ body {
     position: relative;
 }
 
-.btns-wrap {
+#btns {
     position: absolute;
     right: 20px;
     top: 0;
@@ -38,7 +42,7 @@ body {
 }
 
 
-.btn {
+.btn-ok, .btn-not-ok, .btn-so-so {
     width: 80px;
     height: 100%;
     /* border-radius: 50%; */
@@ -50,11 +54,11 @@ body {
     color: #666;
 }
 
-.so-so-btn {
+.btn-so-so {
     font-size: 21px;
 }
 
-.btn:hover {
+.btn-ok:hover, .btn-not-ok:hover, .btn-so-so:hover {
     transform: scale(1.8);
 }
 
