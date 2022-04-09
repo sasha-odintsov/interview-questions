@@ -34,6 +34,18 @@ body {
     position: relative;
 }
 
+.main_item-status1 {
+    color: #03914e;
+}
+
+.main_item-status2 {
+    color: #bd0000;
+}
+
+.main_item-status3 {
+    color: #e9ab00;
+}
+
 #btns {
     position: absolute;
     right: 20px;
