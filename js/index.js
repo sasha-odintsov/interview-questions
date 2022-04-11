@@ -17,6 +17,7 @@ fetch('http://localhost:3005')
                     </li>`
                 );
             };           
+            
             if (x.status == 1) {
                 render('main_item-status1');
             } else if (x.status == 2) {
@@ -28,18 +29,18 @@ fetch('http://localhost:3005')
             };   
         });
 
-        function clickBtn(clss, color) {
+        function clickBtn(clss) {
             let elements = document.querySelectorAll(clss);
             elements.forEach(function(x) {
                 x.onclick = function() {
-                    this.style.color = color;
+                    this.style.color = '#fff';
                 }; 
             });
         };
 
-        clickBtn('.btn-ok', '#03914e');
-        clickBtn('.btn-not-ok', '#bd0000');
-        clickBtn('.btn-so-so', '#e9ab00');
+        clickBtn('.btn-ok');
+        clickBtn('.btn-not-ok');
+        clickBtn('.btn-so-so');
 
         // document.querySelector('.btn').addEventListener('click', function(){
         //     document.querySelector('.main_item').style.color = 'green';

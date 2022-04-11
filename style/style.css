@@ -4,6 +4,7 @@ body {
 
 .header {
     box-shadow: 1px 2px 8px #e0e0e0;
+    margin-bottom: 10px;
 }
 
 .heading {
@@ -12,7 +13,6 @@ body {
     color: #666;
     text-align: center;
     padding: 40px;
-    border-bottom: 1px #e0e0e0 solid;
 }
 
 .wrapper {
@@ -35,15 +35,18 @@ body {
 }
 
 .main_item-status1 {
-    color: #03914e;
+    background-color: #03914e;
+    color: #fff;
 }
 
 .main_item-status2 {
-    color: #bd0000;
+    background-color: #bd0000;
+    color: #fff;
 }
 
 .main_item-status3 {
-    color: #e9ab00;
+    background-color: #e9ab00;
+    color: #fff;
 }
 
 #btns {
