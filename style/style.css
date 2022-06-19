@@ -49,14 +49,19 @@ body {
     color: #fff;
 }
 
+.main_item:hover #btns {
+    display: inline-block;
+}
+
 #btns {
-    /* position: absolute;
-    right: 20px;
-    top: 0;
-    height: 100%; */
-    display: block;
+    position: absolute;
+    right: 10px;
+    bottom: -5px;
+    display: none;
+    z-index: 1;
+    /* display: block;
     text-align: end;
-    margin-top: 5px;
+    margin-top: 5px; */
 }
 
 
@@ -64,15 +69,14 @@ body {
     width: 50px;
     height: 25px;
     border-radius: 5px;
-    background: #e0e0e0;
-    /* border: none; */
+    background: #fff;
     border: 1px solid #e0e0e0;
     cursor: pointer;
     font-size: 16px;
-    color: #fff;
+    color: #e0e0e0;
 }
 
-.btn-ok-active, .btn-not-ok-active, .btn-so-so-active {
+/* .btn-ok-active, .btn-not-ok-active, .btn-so-so-active {
     background: #fff;
 }
 
@@ -86,14 +90,27 @@ body {
 
 .btn-so-so-active {
     color: #e9ab00;
-}
+} */
 
 .btn-so-so {
     font-size: 19px;
 }
 
 .btn-ok:hover, .btn-not-ok:hover, .btn-so-so:hover {
-    background: #d1d1d1;
+    background: #fff;
+    
+}
+
+.btn-ok:hover {
+    color: #03914e;
+}
+
+.btn-not-ok:hover {
+    color: #bd0000;
+}
+
+.btn-so-so:hover {
+    color: #e9ab00;
 }
 
 .btn-ok:active, .btn-not-ok:active, .btn-so-so:active {
