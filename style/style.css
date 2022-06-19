@@ -50,31 +50,54 @@ body {
 }
 
 #btns {
-    position: absolute;
+    /* position: absolute;
     right: 20px;
     top: 0;
-    height: 100%;
+    height: 100%; */
+    display: block;
+    text-align: end;
+    margin-top: 5px;
 }
 
 
 .btn-ok, .btn-not-ok, .btn-so-so {
-    width: 80px;
-    height: 100%;
-    /* border-radius: 50%; */
-    background: none;
-    border: none;
-    /* border-right: 1px solid #d4d4d4; */
+    width: 50px;
+    height: 25px;
+    border-radius: 5px;
+    background: #e0e0e0;
+    /* border: none; */
+    border: 1px solid #e0e0e0;
     cursor: pointer;
     font-size: 16px;
-    color: #666;
+    color: #fff;
+}
+
+.btn-ok-active, .btn-not-ok-active, .btn-so-so-active {
+    background: #fff;
+}
+
+.btn-ok-active {
+    color: #03914e;
+}
+
+.btn-not-ok-active {
+    color: #bd0000;
+}
+
+.btn-so-so-active {
+    color: #e9ab00;
 }
 
 .btn-so-so {
-    font-size: 21px;
+    font-size: 19px;
 }
 
 .btn-ok:hover, .btn-not-ok:hover, .btn-so-so:hover {
-    transform: scale(1.8);
+    background: #d1d1d1;
+}
+
+.btn-ok:active, .btn-not-ok:active, .btn-so-so:active {
+    transform: scale(.9);
 }
 
 /* #ok-btn { */

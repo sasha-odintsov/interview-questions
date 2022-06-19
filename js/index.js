@@ -29,18 +29,19 @@ fetch('http://localhost:3005')
             };   
         });
 
-        function clickBtn(clss) {
+        function clickBtn(clss, color) {
             let elements = document.querySelectorAll(clss);
-            elements.forEach(function(x) {
-                x.onclick = function() {
-                    this.style.color = '#fff';
+            elements.forEach(function(button) {
+                button.onclick = function() {
+                    this.style.background = '#fff';
+                    this.style.color = color;
                 }; 
             });
         };
 
-        clickBtn('.btn-ok');
-        clickBtn('.btn-not-ok');
-        clickBtn('.btn-so-so');
+        clickBtn('.btn-ok', '#03914e');
+        clickBtn('.btn-not-ok', '#bd0000');
+        clickBtn('.btn-so-so', '#e9ab00');
 
         // document.querySelector('.btn').addEventListener('click', function(){
         //     document.querySelector('.main_item').style.color = 'green';
