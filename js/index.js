@@ -10,63 +10,78 @@ fetch('http://localhost:3005')
                     "beforeend",
                     `<li class="main_item ${clss}">${x.question}
                     <span id="btns">
-                    <button class="btn-ok">&#10004;</button>
-                    <button class="btn-not-ok">&#10008;</button>
-                    <button class="btn-so-so">&plusmn;</button>
+                    <button data-questionId="${x._id}" class="btn-ok">&#10004;</button>
+                    <button data-questionId="${x._id}" class="btn-not-ok">&#10008;</button>
+                    <button data-questionId="${x._id}" class="btn-so-so">&plusmn;</button>
                     </span>
                     </li>`
                 );
             };           
-            
-            if (x.status == 1) {
+                
+            if (x.status === 1) {
                 render('main_item-status1');
-            } else if (x.status == 2) {
+            } else if (x.status === 2) {
                 render('main_item-status2');
-            } else if (x.status == 3) {
+            } else if (x.status === 3) {
                 render('main_item-status3');
             } else {
                 render('')
             };   
-        });
-
-        function clickBtn(clss, color) {
-            let elements = document.querySelectorAll(clss);
+        });    
+    })
+    .then(() => {
+        async function getListWithFetch(url, route, method, body) {
+            const response = await fetch(url + '/' + route, {
+                method,
+                body: JSON.stringify(body),
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            });
+            const data = await response.json();
+            document.location.reload();  
+        };
+    
+        function changeStatus(clss, status) {
+            const elements = document.querySelectorAll(clss);
             elements.forEach(function(button) {
                 button.onclick = function() {
-                    this.style.background = '#fff';
-                    this.style.color = color;
+                   let id = this.dataset.questionid;
+                   getListWithFetch('http://localhost:3005', 'status', "PATCH", {status, _id: id});
                 }; 
             });
         };
+        
+        changeStatus('.btn-ok', 1);
+        changeStatus('.btn-not-ok', 2);
+        changeStatus('.btn-so-so', 3);
+    })
 
-        clickBtn('.btn-ok', '#03914e');
-        clickBtn('.btn-not-ok', '#bd0000');
-        clickBtn('.btn-so-so', '#e9ab00');
-
-        // document.querySelector('.btn').addEventListener('click', function(){
-        //     document.querySelector('.main_item').style.color = 'green';
-        // });
-        // btns.onclick = function(event) {  
-        //     if (event.target.className != 'btn' ) return;
-        //     document.querySelector('.main_item').style.color = 'green';
-        // }
-
-        // function changeColor(a, b, color) {
-        //     let elements = document.querySelectorAll(a);
-        //     elements.forEach(function (x) {
-        //         x.onclick = function() {
-        //             this.style.color = color;
-        //             this.style.fontSize = '25px'
-        //             let el = document.querySelectorAll(b);
-        //             el.forEach(x => x.style.color = color);
-        //         };
+        // function changeStatus(clss, status, url, method) {
+        //     const elements = document.querySelectorAll(clss);
+        //     elements.forEach(function(button) {
+        //         button.onclick = function() {
+        //             const body = {
+        //                 status,
+        //                 _id: this.dataset.questionid
+        //             }
+        //             fetch(url, {
+        //                 method,
+        //                 body: JSON.stringify(body),
+        //                 headers: {
+        //                     "Content-Type": "application/json"
+        //                 }
+        //             })
+        //             .then((response) => response.json())
+        //             .then((result) => {
+        //                 console.log(result)
+        //                 // location.reload();
+        //             });
+        //         }; 
         //     });
         // };
-        
-        // changeColor('.btn-ok', '.main_item', '#03914e');
-        // changeColor('.btn-not-ok', '.main_item', '#bd0000');
-        // changeColor('.btn-so-so', '.main_item', '#e9ab00');
-    });         
-
-
-// document.li.className.add('main_item');
+  
+        // changeStatus('.btn-ok', 1, 'http://localhost:3005/status', "PATCH");
+        // changeStatus('.btn-not-ok', 2, 'http://localhost:3005/status', "PATCH");
+        // changeStatus('.btn-so-so', 3, 'http://localhost:3005/status', "PATCH");
+        // changeStatus('#reset', 0, 'http://localhost:3005', "PATCH");
