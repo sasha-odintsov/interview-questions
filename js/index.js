@@ -55,6 +55,14 @@ fetch('http://localhost:3005')
         changeStatus('.btn-ok', 1);
         changeStatus('.btn-not-ok', 2);
         changeStatus('.btn-so-so', 3);
+
+        function reset() {
+            document.querySelectorAll('.main_item')
+            document.querySelector('#reset').onclick = function() {
+                getListWithFetch('http://localhost:3005', 'reset', "PATCH", {status: '', status: 0});
+            }
+        }
+        reset();
     })
 
         // function changeStatus(clss, status, url, method) {

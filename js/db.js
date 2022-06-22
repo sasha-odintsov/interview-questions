@@ -32,6 +32,18 @@ app.patch('/status', (req, res) => {
     });
 });
 
+app.patch('/reset', (req, res) => {  
+  client.connect(async (err) => {
+    const data = req.body;
+    const updateResult = await collection.updateMany(
+      { status: { $gt : 0 } },
+      { $set: { status: data.status}}
+      );
+      res.send(updateResult);
+      // client.close();
+    });
+});
+
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
 });
