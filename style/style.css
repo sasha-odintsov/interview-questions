@@ -2,6 +2,12 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
+/* wrapper */
+.wrapper {
+    margin: 0 40px;
+}
+
+/* header */
 .header {
     box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.2);
     margin-bottom: 20px;
@@ -15,10 +21,7 @@ body {
     padding: 40px;
 }
 
-.wrapper {
-    margin: 0 40px;
-}
-
+/* main section */
 .main {
     margin: 0;
     padding: 0;
@@ -49,6 +52,7 @@ body {
     color: #fff;
 }
 
+/* buttons */
 .main_item:hover #btns {
     display: inline-block;
 }
@@ -59,11 +63,7 @@ body {
     bottom: -5px;
     display: none;
     z-index: 1;
-    /* display: block;
-    text-align: end;
-    margin-top: 5px; */
 }
-
 
 .btn-ok, .btn-not-ok, .btn-so-so, #reset {
     width: 50px;
@@ -77,26 +77,9 @@ body {
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* .btn-ok-active, .btn-not-ok-active, .btn-so-so-active {
-    background: #fff;
-}
-
-.btn-ok-active {
-    color: #03914e;
-}
-
-.btn-not-ok-active {
-    color: #bd0000;
-}
-
-.btn-so-so-active {
-    color: #e9ab00;
-} */
-
 .btn-so-so {
     font-size: 19px;
 }
-
 
 .btn-ok:hover, .btn-not-ok:hover, .btn-so-so:hover, #reset:hover {
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
@@ -114,7 +97,6 @@ body {
 .btn-so-so:hover {
     color: #e9ab00;
 }
-
 
 .btn-ok:active, .btn-not-ok:active, .btn-so-so:active, #reset:active {
     transform: scale(.9);
