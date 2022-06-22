@@ -18,17 +18,21 @@ fetch('http://localhost:3005')
                     </span>
                     </li>`
                 );
-            };           
-                
-            if (x.status === 1) {
-                render('main_item-status1');
-            } else if (x.status === 2) {
-                render('main_item-status2');
-            } else if (x.status === 3) {
-                render('main_item-status3');
-            } else {
-                render('')
             };   
+            
+            switch(x.status) {
+                case 1:
+                    render('main_item-status1');
+                    break;
+                case 2: 
+                    render('main_item-status2');
+                    break;
+                case 3:
+                    render('main_item-status3');
+                    break;
+                default:
+                    render('');
+            }   
         });    
     })
     .then(() => {
