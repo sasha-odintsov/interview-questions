@@ -10,6 +10,7 @@ You can mark each question:
 
 ```
 npm install
+npm run build
 node src/db.js
 start index.html
 ```
