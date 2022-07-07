@@ -1,10 +1,10 @@
 # Interview questions
 
-This is an application for marking knowledge of javascript interview questions. 
+This is an application for marking knowledge of javascript interview questions.\
 You can mark each question: 
-- I know (button :heavy_check_mark:)
-- I don’t know (button :x:)
-- I understand approximately (button +-)
+- I know (button &#10004;)
+- I don’t know (button &#10008;)
+- I understand approximately (button &plusmn;)
 
 ## Up and Run
 
